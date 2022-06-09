@@ -3,7 +3,6 @@ import {
   Configuration,
 } from '@midwayjs/decorator';
 
-
 @Configuration({
   namespace: 'nacos',
   importConfigs: [

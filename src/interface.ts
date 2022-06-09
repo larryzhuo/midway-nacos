@@ -1,3 +1,5 @@
+import { ServiceFactoryConfigOption } from '@midwayjs/core';
+
 export interface IServiceBalancer {
   /**
    * 根据服务名称选择实例
@@ -15,12 +17,8 @@ export interface INacosBalancer {
   getServiceBalancer(strategy?: string): IServiceBalancer;
 }
 
-export interface IClientConfig {
-  client?: any;
-  clients?: any;
-}
 
 export interface INacosConfig {
-  registry?: IClientConfig;
-  config?: IClientConfig;
+  registry?: ServiceFactoryConfigOption<any>;
+  config?: ServiceFactoryConfigOption<any>;
 }
