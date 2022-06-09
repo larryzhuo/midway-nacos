@@ -13,5 +13,11 @@ export interface INacosBalancer {
      */
     getServiceBalancer(strategy?: string): IServiceBalancer;
 }
+export interface IClientConfig {
+    client?: any;
+    clients?: any;
+}
 export interface INacosConfig {
+    registry?: IClientConfig;
+    config?: IClientConfig;
 }
