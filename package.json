@@ -1,6 +1,6 @@
 {
   "name": "midway-nacos",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "",
   "main": "dist/index.js",
   "typings": "index.d.ts",
@@ -11,7 +11,14 @@
     "lint": "mwts check",
     "lint:fix": "mwts fix"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:larryzhuo/midway-nacos.git"
+  },
+  "keywords": [
+    "midway",
+    "nacos"
+  ],
   "author": "larry",
   "files": [
     "dist/**/*.js",
