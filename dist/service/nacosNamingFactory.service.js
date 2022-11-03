@@ -18,7 +18,7 @@ const nacos_1 = require("nacos");
  */
 let NacosNamingFactoryService = class NacosNamingFactoryService extends core_1.ServiceFactory {
     getName() {
-        return "nacosNamingFactoryService";
+        return 'nacosNamingFactoryService';
     }
     async init() {
         await this.initClients(this.nacosRegistry);
@@ -32,36 +32,35 @@ let NacosNamingFactoryService = class NacosNamingFactoryService extends core_1.S
         }
         let client;
         try {
-            this.logger.info(`NacosNamingClient初始化`);
+            this.logger.info('NacosNamingClient初始化');
             client = new nacos_1.NacosNamingClient(config);
             await client.ready();
-            this.logger.info(`NacosNamingClient连接ready`);
+            this.logger.info('NacosNamingClient连接ready');
         }
         catch (e) {
             this.logger.error(`NacosNamingClient连接异常, ${JSON.stringify(config)}`, e);
         }
         return client;
     }
-    async destroyClient(client) {
-    }
+    async destroyClient(client) { }
 };
 __decorate([
-    decorator_1.Logger('coreLogger'),
+    (0, decorator_1.Logger)('coreLogger'),
     __metadata("design:type", Object)
 ], NacosNamingFactoryService.prototype, "logger", void 0);
 __decorate([
-    decorator_1.Config('nacos.registry'),
+    (0, decorator_1.Config)('nacos.registry'),
     __metadata("design:type", Object)
 ], NacosNamingFactoryService.prototype, "nacosRegistry", void 0);
 __decorate([
-    decorator_1.Init(),
+    (0, decorator_1.Init)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], NacosNamingFactoryService.prototype, "init", null);
 NacosNamingFactoryService = __decorate([
-    decorator_1.Provide(),
-    decorator_1.Scope(decorator_1.ScopeEnum.Singleton)
+    (0, decorator_1.Provide)(),
+    (0, decorator_1.Scope)(decorator_1.ScopeEnum.Singleton)
 ], NacosNamingFactoryService);
 exports.NacosNamingFactoryService = NacosNamingFactoryService;
 //# sourceMappingURL=nacosNamingFactory.service.js.map

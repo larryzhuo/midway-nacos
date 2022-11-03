@@ -1,5 +1,12 @@
 import { ServiceFactory } from '@midwayjs/core';
-import { Config, Init, Provide, Scope, ScopeEnum, Logger } from '@midwayjs/decorator';
+import {
+  Config,
+  Init,
+  Provide,
+  Scope,
+  ScopeEnum,
+  Logger,
+} from '@midwayjs/decorator';
 import { NacosNamingClient } from 'nacos';
 
 /**
@@ -8,15 +15,14 @@ import { NacosNamingClient } from 'nacos';
 @Provide()
 @Scope(ScopeEnum.Singleton)
 export class NacosNamingFactoryService extends ServiceFactory<NacosNamingClient> {
-  
   @Logger('coreLogger')
   logger;
 
   @Config('nacos.registry')
-  nacosRegistry:any;
+  nacosRegistry: any;
 
   getName(): string {
-    return "nacosNamingFactoryService";
+    return 'nacosNamingFactoryService';
   }
 
   @Init()
@@ -25,24 +31,26 @@ export class NacosNamingFactoryService extends ServiceFactory<NacosNamingClient>
   }
 
   protected async createClient(config: any): Promise<NacosNamingClient> {
-    if(!config) {
+    if (!config) {
       throw new Error('config 空');
     }
-    if(!config.logger) {
+    if (!config.logger) {
       config.logger = console;
     }
     let client;
     try {
-      this.logger.info(`NacosNamingClient初始化`);
+      this.logger.info('NacosNamingClient初始化');
       client = new NacosNamingClient(config);
       await client.ready();
-      this.logger.info(`NacosNamingClient连接ready`);
-    } catch(e) {
-      this.logger.error(`NacosNamingClient连接异常, ${JSON.stringify(config)}`, e);
+      this.logger.info('NacosNamingClient连接ready');
+    } catch (e) {
+      this.logger.error(
+        `NacosNamingClient连接异常, ${JSON.stringify(config)}`,
+        e
+      );
     }
     return client;
   }
-  
-  protected async destroyClient(client: NacosNamingClient) {
-  }
+
+  protected async destroyClient(client: NacosNamingClient) {}
 }

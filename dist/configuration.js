@@ -16,7 +16,7 @@ let NacosConfiguration = class NacosConfiguration {
     }
 };
 NacosConfiguration = __decorate([
-    decorator_1.Configuration({
+    (0, decorator_1.Configuration)({
         namespace: 'nacos',
         importConfigs: [
             {

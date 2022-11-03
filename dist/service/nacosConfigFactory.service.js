@@ -46,22 +46,22 @@ let NacosConfigFactoryService = class NacosConfigFactoryService extends core_1.S
     }
 };
 __decorate([
-    decorator_1.Logger('coreLogger'),
+    (0, decorator_1.Logger)('coreLogger'),
     __metadata("design:type", Object)
 ], NacosConfigFactoryService.prototype, "logger", void 0);
 __decorate([
-    decorator_1.Config('nacos.config'),
+    (0, decorator_1.Config)('nacos.config'),
     __metadata("design:type", Object)
 ], NacosConfigFactoryService.prototype, "nacosConfig", void 0);
 __decorate([
-    decorator_1.Init(),
+    (0, decorator_1.Init)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], NacosConfigFactoryService.prototype, "init", null);
 NacosConfigFactoryService = __decorate([
-    decorator_1.Provide(),
-    decorator_1.Scope(decorator_1.ScopeEnum.Singleton)
+    (0, decorator_1.Provide)(),
+    (0, decorator_1.Scope)(decorator_1.ScopeEnum.Singleton)
 ], NacosConfigFactoryService);
 exports.NacosConfigFactoryService = NacosConfigFactoryService;
 //# sourceMappingURL=nacosConfigFactory.service.js.map
