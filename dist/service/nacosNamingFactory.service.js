@@ -43,6 +43,9 @@ let NacosNamingFactoryService = class NacosNamingFactoryService extends core_1.S
         return client;
     }
     async destroyClient(client) { }
+    getClients() {
+        return this.clients;
+    }
 };
 __decorate([
     (0, decorator_1.Logger)('coreLogger'),

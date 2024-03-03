@@ -53,4 +53,8 @@ export class NacosNamingFactoryService extends ServiceFactory<NacosNamingClient>
   }
 
   protected async destroyClient(client: NacosNamingClient) {}
+
+  public getClients(): Map<string, NacosNamingClient> {
+    return this.clients;
+  }
 }

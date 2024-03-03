@@ -10,4 +10,5 @@ export declare class NacosNamingFactoryService extends ServiceFactory<NacosNamin
     init(): Promise<void>;
     protected createClient(config: any): Promise<NacosNamingClient>;
     protected destroyClient(client: NacosNamingClient): Promise<void>;
+    getClients(): Map<string, NacosNamingClient>;
 }
