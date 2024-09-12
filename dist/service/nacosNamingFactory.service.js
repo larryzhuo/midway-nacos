@@ -28,7 +28,7 @@ let NacosNamingFactoryService = class NacosNamingFactoryService extends core_1.S
             throw new Error('config 空');
         }
         if (!config.logger) {
-            config.logger = console;
+            config.logger = this.logger;
         }
         let client;
         try {

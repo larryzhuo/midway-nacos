@@ -18,7 +18,7 @@ const nacos_1 = require("nacos");
  */
 let NacosConfigFactoryService = class NacosConfigFactoryService extends core_1.ServiceFactory {
     getName() {
-        return "nacosNamingFactoryService";
+        return 'nacosNamingFactoryService';
     }
     async init() {
         await this.initClients(this.nacosConfig); //initClients循环调用createClient将生成的client存储到map中，ServiceFactory中实现
@@ -28,7 +28,7 @@ let NacosConfigFactoryService = class NacosConfigFactoryService extends core_1.S
             throw new Error('config 空');
         }
         if (!config.logger) {
-            config.logger = console;
+            config.logger = this.logger;
         }
         let client;
         try {
@@ -42,8 +42,7 @@ let NacosConfigFactoryService = class NacosConfigFactoryService extends core_1.S
         }
         return client;
     }
-    async destroyClient(client) {
-    }
+    async destroyClient(client) { }
 };
 __decorate([
     (0, decorator_1.Logger)('coreLogger'),

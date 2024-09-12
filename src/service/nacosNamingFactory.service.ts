@@ -35,7 +35,7 @@ export class NacosNamingFactoryService extends ServiceFactory<NacosNamingClient>
       throw new Error('config 空');
     }
     if (!config.logger) {
-      config.logger = console;
+      config.logger = this.logger;
     }
     let client;
     try {
